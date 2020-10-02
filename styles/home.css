@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(238, 236, 223);
+} 
+#manage{
+    padding-top: 40px;
+    margin-top: 50px;
+    border-left: 1px solid black;
+}
+#displayzone{
+    margin-top: 50px;
+    border-radius: 30px;
+    border-left: 2px black outset;
+    text-align: center;
+    background-color: rgb(115, 107, 133,0.1);
+    height: 450px
+}
+#header{
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-align: center;
+    background-color: rgb(118, 139, 139,0.3);
+    height: 100px;
+    color: cornsilk;
+}
+#flot{
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: rgb(228, 138, 28,0.5)
+}
+#createForm{
+    display: none;
+}

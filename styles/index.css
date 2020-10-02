@@ -1,0 +1,18 @@
+#login{
+    padding-top: 15%;
+    padding-left: 20%;
+    border-radius: 30px;
+}
+.container{
+    padding-left: 20%;
+}
+#form{
+    background-color: cornsilk;
+    padding-top:5%;
+    padding-left:10%;
+    padding-right:10%;
+    border-radius: 40px;
+}
+body{
+    background-color: rgb(238, 236, 223);
+}

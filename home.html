@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="styles\home.css">
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+                    <a class="navbar-brand" href="#">Home</a>
+                    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                        data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                        aria-label="Toggle navigation"></button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavId">
+                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">tasks</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">sign out</a>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                            <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div id="header" class="col-md-12">
+                <div class="row">
+                    <div class="col-sm-2 col-sm-pull-5">
+
+                        <p>
+                        <h4>
+                            username
+                        </h4>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="flot" class="col-md-12">
+                        <p>
+                        <h2>
+                            Welcome To Our Task Managment
+                        </h2>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div id="manage" class="col-md-3">
+                <ul class="list-group">
+                    <li id="current" class="list-group-item active">manage current task</li><br>
+                    <li class="list-group-item" id="create">create a task</li><br>
+                    <li id="update" class="list-group-item">update a task</li><br>
+                    <li id="delete" class="list-group-item">delete a task</li><br>
+                    <li id="display" class="list-group-item">display tasks</li>
+                </ul>
+            </div>
+            <div class="col-md-9" class="row" id="displayzone">
+                <div class="container">
+                    <div class="col-md-12">
+                        <div class="row" id="createForm">
+                            <div class="col-md-12">
+                                <p>
+                                <h3>define your task</h3>
+                                </p><br>
+                                <div class="form-group">
+                                    <input autofocus type="text" name="" id="" class="form-control"
+                                        placeholder="label"><br>
+                                    <input type="number" min="6" max="18" name="" id="" class="form-control"
+                                        placeholder="hour"><br>
+                                    <input type="number" min="1" max="4" name="" id="" class="form-control"
+                                        placeholder="duration">
+                                    <button id="createBtn" class="btn btn-primary">create</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="jquery/tmp/jquery.js"></script>
+    <script src="scripts/home.js"></script>
+</body>
+
+</html>
