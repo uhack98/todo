@@ -7,29 +7,50 @@ $(document).ready(function () {
  
 $(document).ready(function () {
     $('#submit').click(function () { 
-        pass = document.getElementById('pass').value;
-        username = document.getElementById('user').value;
-        let logger = localStorage.getItem('id');
-        var obj = JSON.parse(logger).person.UserId
-        var count = 0, x;
-        alert(obj)
-        let index = 0;
+        pass = $('#pass').val()
+        username = $('#user').val(); 
+        var obj = new Object();
+        obj = JSON.parse(localStorage.getItem('id'))
+        var x = obj.person.UserId
+        var count = 0; console.log(x);
+        let index = 0; let y = x.pop(); x.push(y);
+        var pass_i=0, usr_i=0
         do {
-            alert('alo')
+
+            let objb = JSON.parse(localStorage.getItem(x[index]))
+            //console.log((username === objb.username || username === objb.phone || username === objb.email))
+            fst = !((username === objb.username || username === objb.phone || username === objb.email)
+                && (pass === objb.password));
+            if (pass === objb.password) {
+                pass_i = 1;
+            }
+            if (username === objb.username || username === objb.phone || username === objb.email) {
+                usr_i = 1;
+            }
+            scd = (index < y-1);
+            condition = fst && scd
+            
+            //console.log(index + 1); console.log(condition)
+            
             index++
-            count++;
+            count++; 
            
         }
-         while (!((username == objb.username | username == objb.phone | username == objb.email)
-                                & (pass == objb.password) & (index <= obj.lenght))
-                )
+         while(condition)
         
-        if (count < obj.lenght + 1) {
-            alert('ok')
+        if (count < y) {
+            window.location.href = 'home.html'
             
         }
         else {
-            alert('not fount')
+            if (usr_i == 1) {
+                $('#user').css('border', 'red 1px');
+            }
+            if (usr_i == 1) {
+                $('#pass').css('border', 'red 1px');
+            }
+            
+            //alert(`ok${count}`);
         }
 
     });
