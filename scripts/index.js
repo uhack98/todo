@@ -8,7 +8,6 @@
 }
 
 function loadData(index) {
-                alert(index);
             if (!localStorage.getItem('current')) {
                  let cur = new Object(CURRENT)
                 localStorage.setItem('current', JSON.stringify(cur));
@@ -18,7 +17,7 @@ function loadData(index) {
             x.password = current.password;
                  x.name = current.username; 
                  x.id = index;
-                localStorage.removeItem('current'); alert(x)
+                localStorage.removeItem('current');
                 localStorage.setItem('current', JSON.stringify(x))
 
             window.location.href = 'home.html';
@@ -59,7 +58,7 @@ $(document).ready(function () {
         }
          while(condition)
         
-        if (count < y) {
+        if ((count < y) || count==1) {
             alert('ok')
             loadData(index);
         }
