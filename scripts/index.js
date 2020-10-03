@@ -59,7 +59,6 @@ $(document).ready(function () {
          while(condition)
         
         if ((count < y) || count==1) {
-            alert('ok')
             loadData(index);
         }
         else {
