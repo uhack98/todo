@@ -16,80 +16,18 @@
 
             </div>
         </div>
-        <form id="submit" class="form-group">
-            <input required type="email" class="form-control" placeholder="email" name="email" id="email"><br>
+        <div class="form-group">
+            <input required type="email" class="form-control" placeholder="email" autofocus id="email"><br>
             <input type="tel" class="form-control" id="phone" name="phone" placeholder="phone" required><br>
             <input required type="text" class="form-control" name="password" id="password" placeholder="password">
             <br>
-            <button type="submit" class="btn btn-success">Create account</button>
-        </form>
+            <button id="submit" type="submit" class="btn btn-success">Create account</button>
+            <p><a href="index.html">login </a></p>
+        </div>
+        
     </div>
     <script src="jquery/tmp/jquery.js"></script>
-    <script>
-
-        var ID = {
-            person: {
-                UserId: Array,
-                username: Array
-            }
-        };
-
-
-        var user_account = {
-            username: String,
-            tasks: Array
-        }
-
-        var user_info = {
-            idAccount: Number,
-            email: String,
-            password: String,
-            username: String,
-            phone: Number
-        }
-
-
-        $(document).ready(function () {
-
-            if (!localStorage.getItem('id')) {
-                localStorage.setItem('id', JSON.stringify(ID));
-                let x = JSON.parse(localStorage.getItem('id'));
-                x.person.UserId = [];
-                x.person.username = []
-                localStorage.removeItem('id');
-                localStorage.setItem('id', JSON.stringify(x))
-            }
-
-
-            $('#submit').submit(function () {
-
-
-                var id = new Object();
-                var account = new Object(user_account);
-                var users = new Object(user_info);
-                id = JSON.parse(localStorage.getItem('id'));
-                email = $('#email').val(); alert(email)
-                phone = $('#phone').val();
-                password = $('#password').val();
-
-                username = email.substr(0, email.indexOf('@'));
-                users.email = email;
-                users.password = password;
-                users.phone = phone;
-                account.username = username;
-                users.idAccount = id.person.UserId.length + 1;
-                users.username = username;
-
-                localStorage.removeItem('id')
-                id.person.UserId.push(users.idAccount);
-                id.person.username.push(users.username);
-                localStorage.setItem('id', JSON.stringify(id));
-                localStorage.setItem(account.username, JSON.stringify(account));
-                localStorage.setItem(users.idAccount, JSON.stringify(users));
-
-            });
-        });
-
+    <script src="scripts\new-account.js">
     </script>
 </body>
 

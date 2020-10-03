@@ -1,9 +1,29 @@
 
 
 
-$(document).ready(function () {
-    
-});
+ var CURRENT = {
+    password: String,
+    name: String,
+    id: Number
+}
+
+function loadData(index) {
+                alert(index);
+            if (!localStorage.getItem('current')) {
+                 let cur = new Object(CURRENT)
+                localStorage.setItem('current', JSON.stringify(cur));
+            }
+            let x = JSON.parse(localStorage.getItem('current'));
+            let current = JSON.parse(localStorage.getItem(index)) 
+            x.password = current.password;
+                 x.name = current.username; 
+                 x.id = index;
+                localStorage.removeItem('current'); alert(x)
+                localStorage.setItem('current', JSON.stringify(x))
+
+            window.location.href = 'home.html';
+           }
+            
  
 $(document).ready(function () {
     $('#submit').click(function () { 
@@ -17,19 +37,20 @@ $(document).ready(function () {
         var pass_i=0, usr_i=0
         do {
 
-            let objb = JSON.parse(localStorage.getItem(x[index]))
+            var objb = JSON.parse(localStorage.getItem(x[index]));
             //console.log((username === objb.username || username === objb.phone || username === objb.email))
             fst = !((username === objb.username || username === objb.phone || username === objb.email)
                 && (pass === objb.password));
-            if (pass === objb.password) {
-                pass_i = 1;
+            if (!(pass === objb.password)) {
+                pass_i ++; console.log(pass_i)
             }
-            if (username === objb.username || username === objb.phone || username === objb.email) {
-                usr_i = 1;
-            }
+            if (!(username === objb.username || username === objb.phone || username === objb.email)) {
+                
+                usr_i ++; console.log(usr_i)    
+            } //alert(!(pass === objb.password))
             scd = (index < y-1);
-            condition = fst && scd
-            
+            condition = fst && scd;
+            console.log(index); console.log(condition);
             //console.log(index + 1); console.log(condition)
             
             index++
@@ -39,19 +60,30 @@ $(document).ready(function () {
          while(condition)
         
         if (count < y) {
-            window.location.href = 'home.html'
-            
+            alert('ok')
+            loadData(index);
         }
         else {
-            if (usr_i == 1) {
-                $('#user').css('border', 'red 1px');
+            if (usr_i > y-1) {
+                $('#user').css('border', 'red 2px solid');
+                $('#pass').css('border', 'red 2px solid');
+                //$('#user').attr('value', 'incorrect').css('color', 'red');
             }
-            if (usr_i == 1) {
-                $('#pass').css('border', 'red 1px');
+            if((pass_i > y-1)&&!(usr_i > y-1)) {
+                $('#pass').css('border', 'red 2px solid');
+            }
+            else {
+                if ((pass_i > y - 1) && (usr_i > y - 1)) {
+                    //$('#user').css('border', '');
+                    //$('#').attr('value', 'incorrect').css('color', 'red');  
+                }
             }
             
             //alert(`ok${count}`);
         }
 
     });
+
 });
+
+

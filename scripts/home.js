@@ -1,13 +1,4 @@
 
-var userAccount = {
-            username: String,
-            tasks:Array
-        }
-var tasks = {
-    label: String,
-    hour: Number,
-    duration: Number
-}
 
 
 $(document).ready(function () {
@@ -20,24 +11,29 @@ $(document).ready(function () {
             var label = $('#label').val(),
                 hour = $('#hour').val(),
                 duration = $('#duration').val();
-            var task = new Object(tasks);
-            var user = new Object(userAccount);
-            var id = JSON.parse(localStorage.getItem('id'));
+            var user = new Object();
+            var current = JSON.parse(localStorage.getItem('current'));
 
-            let str = localStorage.getItem(user.username);
-            var obj = JSON.parse(str);
-
-            task.label = label;
-            task.hour = hour;
-            task.duration = duration;
-
+            let str = localStorage.getItem(current.name);
+                user = JSON.parse(str);
             
-
-            localStorage.removeItem(userAccount.username);
-            localStorage.setItem(userAccount.username, userAccount);
+            user.tasks.label = label;
+            user.tasks.hour = hour;
+            user.tasks.duration = duration;
+            console.log(user);
+            localStorage.removeItem(user.username);
+        localStorage.setItem(user.username, JSON.stringify(user));
+        $('#createForm').hide();
+        //$('#displayZone').show();
+        
 
         });
-   }); 
+
+    let current = JSON.parse(localStorage.getItem('current'));
+    pass = current.name;
+    $('#personal').before('   '+pass);
+   
+}); 
 
         
     

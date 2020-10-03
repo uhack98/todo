@@ -17,16 +17,25 @@ body{
 #header{
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    text-align: center;
     background-color: rgb(118, 139, 139,0.3);
-    height: 100px;
+    height: 70px;
     color: cornsilk;
 }
 #flot{
+    height: 60px;
     border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
     background-color: rgb(228, 138, 28,0.5)
 }
 #createForm{
     display: none;
+}
+#img{
+    display: inline;
+}
+
+img{
+    height: 35px;
+    width: 35px;
+    border-radius: 50px;
 }
