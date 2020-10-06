@@ -27,7 +27,7 @@ body{
     border-top-right-radius: 20px;
     background-color: rgb(228, 138, 28,0.5)
 }
-#createForm{
+#createForm,#deletezone{
     display: none;
 }
 #img{

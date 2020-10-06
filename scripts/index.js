@@ -32,7 +32,7 @@ $(document).ready(function () {
         obj = JSON.parse(localStorage.getItem('id'))
         var x = obj.person.UserId
         var count = 0; console.log(x);
-        let index = 0; let y = x.pop(); x.push(y);
+        let index = 0; let y = x.length  ;// x.push(y);
         var pass_i=0, usr_i=0
         do {
 
@@ -40,34 +40,35 @@ $(document).ready(function () {
             //console.log((username === objb.username || username === objb.phone || username === objb.email))
             fst = !((username === objb.username || username === objb.phone || username === objb.email)
                 && (pass === objb.password));
-            if (!(pass === objb.password)) {
+            if ((pass === objb.password)) {
                 pass_i ++; console.log(pass_i)
             }
-            if (!(username === objb.username || username === objb.phone || username === objb.email)) {
+            if ((username === objb.username || username === objb.phone || username === objb.email)) {
                 
                 usr_i ++; console.log(usr_i)    
             } //alert(!(pass === objb.password))
-            scd = (index < y-1);
-            condition = fst && scd;
-            console.log(index); console.log(condition);
-            //console.log(index + 1); console.log(condition)
             
+            //console.log(index + 1); console.log(condition)
             index++
-            count++; 
+            //count++; 
+            scd = (index < y);
+            condition = fst && scd; console.log(fst);
+            //console.log(index); console.log(y); console.log(condition);
            
         }
          while(condition)
         
-        if ((count < y) || count==1) {
+        if ((!fst)) {
+            console.log(`y = ${y}`)
             loadData(index);
         }
         else {
-            if (usr_i > y-1) {
+            if (usr_i == 0) {
                 $('#user').css('border', 'red 2px solid');
                 $('#pass').css('border', 'red 2px solid');
                 //$('#user').attr('value', 'incorrect').css('color', 'red');
             }
-            if((pass_i > y-1)&&!(usr_i > y-1)) {
+            if(pass_i == 0) {
                 $('#pass').css('border', 'red 2px solid');
             }
             else {
