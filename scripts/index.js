@@ -34,9 +34,11 @@ $(document).ready(function () {
         obj = JSON.parse(localStorage.getItem('id'))
         var x = obj.person.UserId
         var count = 0; console.log(x);
-        let index = 0; let y = x.length  ;// x.push(y);
+        let index = 0; let y = x.length  ;// x.push(y)
         var pass_i=0, usr_i=0 
-             do {
+        do {
+        var pass_i=0, usr_i=0
+        do {
 
             var objb = JSON.parse(localStorage.getItem(x[index]));
             //console.log((username === objb.username || username === objb.phone || username === objb.email))

@@ -23,6 +23,7 @@ $(document).ready(function () {
                 <td><button>delete</button></td></tr>`);
                 
                 $('#create').css('disabled', 'true');
+
                 $('td button').addClass('btn btn-info')
                 
                 
