@@ -7,6 +7,8 @@
     id: Number
 }
 
+
+
 function loadData(index) {
             if (!localStorage.getItem('current')) {
                  let cur = new Object(CURRENT)
@@ -33,8 +35,8 @@ $(document).ready(function () {
         var x = obj.person.UserId
         var count = 0; console.log(x);
         let index = 0; let y = x.length  ;// x.push(y);
-        var pass_i=0, usr_i=0
-        do {
+        var pass_i=0, usr_i=0 
+             do {
 
             var objb = JSON.parse(localStorage.getItem(x[index]));
             //console.log((username === objb.username || username === objb.phone || username === objb.email))
@@ -55,8 +57,9 @@ $(document).ready(function () {
             condition = fst && scd; console.log(fst);
             //console.log(index); console.log(y); console.log(condition);
            
-        }
-         while(condition)
+            }
+             while(condition)
+        
         
         if ((!fst)) {
             console.log(`y = ${y}`)

@@ -17,9 +17,18 @@
             </div>
         </div>
         <div class="form-group">
-            <input required type="email" class="form-control" placeholder="email" autofocus id="email"><br>
-            <input type="tel" class="form-control" id="phone" name="phone" placeholder="phone" required><br>
+            <input required type="email" class="form-control" placeholder="email" autofocus id="email">
+            <span>
+                <p id="err_email"></p>
+            </span><br>
+            <input type="tel" minlength="9" maxlength="9" class="form-control" id="phone" name="phone" placeholder="phone" required>
+            <span class="error">
+                <p id="err_phone"></p>
+            </span><br>
             <input required type="text" class="form-control" name="password" id="password" placeholder="password">
+            <span class="error">
+                <p id="err_pass"></p>
+            </span>
             <br>
             <button id="submit" type="submit" class="btn btn-success">Create account</button>
             <p><a href="index.html">login </a></p>
